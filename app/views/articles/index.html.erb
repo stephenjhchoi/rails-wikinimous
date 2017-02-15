@@ -1,0 +1,15 @@
+<h1>All articles</h1>
+
+<% @articles.each do |article| %>
+
+<p>==================================</p>
+<h3><%= article.title %></h3>
+<p><%= article.content.truncate_words(5) %></p>
+
+<%= link_to "Show dat shiet", article_path(article) %>
+<%= link_to "Edit dat shiet", edit_article_path(article) %>
+<%= link_to "Destroy dat shiet", article_path(article), method: :delete %>
+
+<% end %>
+
+<h4><%= link_to "Create a new article", new_article_path(@article) %></h4>
